@@ -1,0 +1,17 @@
+baseURL: https://nakladki.netlify.app/
+locale: uk-UA
+defaultContentLanguage: uk
+title: Nakladki
+
+# This project intentionally publishes a static HTML site through Hugo.
+# Optimized pages live in /static and are copied to /public during build.
+disableKinds:
+  - home
+  - section
+  - taxonomy
+  - term
+  - RSS
+  - sitemap
+
+enableRobotsTXT: false
+cleanDestinationDir: true
