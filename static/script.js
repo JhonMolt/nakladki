@@ -110,7 +110,7 @@ document.querySelectorAll('.btn-accent').forEach(button=>{button.addEventListene
 document.querySelectorAll('.service-card, .work-card, .pricing-card, .testimonial-card').forEach(card=>{card.addEventListener('mousemove',(e)=>{const rect=card.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;card.style.setProperty('--mouse-x',x+'px');card.style.setProperty('--mouse-y',y+'px')})});
 
 const style=document.createElement('style');
-style.textContent='.service-card::after,.work-card::after,.pricing-card::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;background:radial-gradient(400px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,.04),transparent 40%);pointer-events:none;z-index:0}.service-card,.work-card,.pricing-card{position:relative;overflow:hidden}.service-card>*,.work-card>*,.pricing-card>*{position:relative;z-index:1}';
+style.textContent='.service-card::after,.work-card::after,.pricing-card::after,.calc-card::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;background:radial-gradient(400px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,.04),transparent 40%);pointer-events:none;z-index:0}.service-card,.work-card,.pricing-card,.calc-card{position:relative;overflow:hidden}.service-card>*,.work-card>*,.pricing-card>*,.calc-card>*{position:relative;z-index:1}';
 document.head.appendChild(style);
 
 const badge=document.querySelector('.hero-badge');

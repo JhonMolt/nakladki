@@ -585,7 +585,6 @@ h3{color:#cacaca}
   .pricing-grid{grid-template-columns:1fr}
   .pricing-card{padding:24px}
   .calc-card{padding:24px}
-  .pricing-card-accent{top:-24px;left:-24px;width:calc(100% + 48px)}
   .price-amount{font-size:48px}
   .calc-amount{font-size:48px}
   .blog-card-content{padding:16px}
