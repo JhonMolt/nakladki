@@ -27,7 +27,7 @@ input{font-family:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 60px;border-radius:var(--rp);font-size:24px;font-weight:600;letter-spacing:-.04em;line-height:1;text-transform:uppercase;transition:var(--tr);white-space:nowrap}
 .btn-accent{background:var(--ac);color:#0a0a0a}
 .btn-accent:hover{background:var(--ac2);transform:translateY(-2px);box-shadow:0 8px 30px var(--acg)}
-.btn-outline{border:1px solid var(--bd);color:#cacaca;background:transparent}
+.btn-outline{border:1px solid rgba(253,187,32,.45);color:#cacaca;background:transparent}
 .btn-outline:hover{border-color:#cacaca;background:rgba(255,255,255,.05)}
 .btn-sm{padding:10px 24px;font-size:14px}
 .btn-full{width:100%}
@@ -397,10 +397,11 @@ h3{color:#cacaca}
 .footer-contact-item{display:flex;align-items:center;gap:23px}
 .footer-label{font-family:Geist,sans-serif;font-size:14px;font-weight:400;letter-spacing:-.04em;color:#777}
 .footer-contact-item h3{font-family:Geist,sans-serif;font-size:24px;font-weight:600;letter-spacing:-.05em}
-.footer-contact-item h3 a{color:#fdba20;text-decoration:none;transition:.3s}
-.footer-contact-item h3 a:hover{color:#d93311}
+.footer-contact-item h3 a{color:#cacaca;text-decoration:none;transition:.3s}
+.footer-contact-item h3 a:hover{color:#fdba20}
 .footer-contact-item h4{font-family:Geist,sans-serif;font-size:24px;font-weight:600;letter-spacing:-.04em}
 .footer-contact-item h4 a{color:#cacaca;text-decoration:none}
+.footer-contact-item h4 a:hover{color:#fdba20}
 .footer-contact-messengers{display:flex;gap:20px;align-items:center}
 .footer-contact-messengers img{width:40px;height:40px}
 .footer-nav{display:flex;flex:1 1 0%;max-width:60%;justify-content:space-between;gap:48px}
@@ -562,7 +563,7 @@ h3{color:#cacaca}
   .contact{padding:84px 12px}
   .works-grid{grid-template-columns:1fr}
   .services-title{font-size:80px;margin-bottom:40px}
-  .service-item-text h3{font-size:24px;font-weight:600;letter-spacing:-.05em;padding:0px 10px}
+  .service-item-text h3{font-size:24px;font-weight:600;letter-spacing:-.05em;padding:0px 14px}
   .service-item{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:20px 5px;align-items:start}
   .service-item.active{grid-template-rows:auto auto}
   .service-item-number{min-width:auto;padding-top:0}
@@ -591,6 +592,7 @@ h3{color:#cacaca}
   .testimonial-card p{font-size:18px;padding-left:30px}
   .testimonial-card .quote-mark{font-size:24px;top:-6px}
   .pricing-grid{grid-template-columns:1fr}
+  .pricing-card-accent{top:-24px;left:-24px;width:calc(100% + 48px)}
   .pricing-card{padding:24px}
   .calc-card{padding:24px}
   .calc-card-header h3{font-size:24px}
@@ -782,7 +784,7 @@ h3{color:#cacaca}
 .about-team-text{font-family:Geist,sans-serif;font-size:24px;font-weight:500;letter-spacing:-.05em;line-height:105%;color:#8f8f8f;max-width:520px;text-align:right}
 .about-team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .about-team-card{background:#333;border-radius:12px;padding:4px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
-.about-team-image{height:360px;border-radius:8px;overflow:hidden}
+.about-team-image{height:390px;border-radius:8px;overflow:hidden}
 .about-team-image img{width:100%;height:100%;object-fit:cover;object-position:center center}
 .about-team-content{background:#0a0a0a;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:24px}
 .about-team-content h3{font-family:Geist,sans-serif;font-size:26px;font-weight:600;letter-spacing:-.05em;line-height:100%;color:#cacaca}
@@ -848,7 +850,7 @@ h3{color:#cacaca}
   .about-team-title{font-size:80px}
   .about-team-text{font-size:24px;text-align:left;max-width:100%}
   .about-team-grid{grid-template-columns:1fr}
-  .about-team-image{height:280px}
+  .about-team-image{height:390px}
   .about-cta{padding:100px 16px;min-height:unset}
   .about-cta-container{flex-direction:column;gap:200px}
   .about-cta-left{max-width:100%}
