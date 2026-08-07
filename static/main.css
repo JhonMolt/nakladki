@@ -148,8 +148,8 @@ h3{color:#cacaca}
 .section-label{font-size:16px;color:#8f8f8f;text-transform:uppercase;letter-spacing:0;flex:0 0 auto;width:120px;padding-top:8px}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
 .section-count{font-size:16px;color:var(--t2)}
-.about{height:95vh;position:relative}
-.about-sticky{position:sticky;top:0;height:80vh;display:flex;align-items:center;justify-content:center;padding:0 150px}
+.about{height:calc(var(--vh, 1vh) * 95);position:relative}
+.about-sticky{position:sticky;top:0;height:calc(var(--vh, 1vh) * 80);display:flex;align-items:center;justify-content:center;padding:0 150px}
 .about-container{max-width:1200px;width:100%;display:flex;gap:32px;align-items:flex-start}
 .about-text{font-family:var(--fb);font-size:56px;font-weight:600;line-height:110%;letter-spacing:-.06em;display:flex;flex-wrap:wrap;gap:0 14px;flex:1 1 0%}
 .about-word{display:inline-block;color:#707070;transition:color .3s}

@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    setVH();
     initNavigation();
     initTitleAnimations();
     scheduleAnalytics();
     runWhenIdle(initDeferredFeatures, 1500);
 });
+
+function setVH() {
+    document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+}
+setVH();
+window.addEventListener('resize', setVH);
 
 function runWhenIdle(callback, timeout) {
     if ('requestIdleCallback' in window) {
