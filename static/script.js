@@ -1,10 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     revealHero();
-    initIntersectionAnimations();
     initNavigation();
+    initTitleAnimations();
+    scheduleAnalytics();
+    runWhenIdle(initDeferredFeatures, 1500);
+});
+
+function runWhenIdle(callback, timeout) {
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(callback, { timeout });
+    } else {
+        setTimeout(callback, timeout);
+    }
+}
+
+function initDeferredFeatures() {
+    initIntersectionAnimations();
     initAnchors();
     initCounters();
-    initTitleAnimations();
     initAboutText();
     initFaq();
     initServices();
@@ -12,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initPointerEffects();
     initStaggerDelays();
-    scheduleAnalytics();
-});
+}
 
 function revealHero() {
     const heroTitle = document.getElementById('heroTitle');
@@ -337,9 +349,10 @@ function scheduleAnalytics() {
         window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
     });
 
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 5000 });
+    const loadAfterDelay = () => setTimeout(loadAnalytics, 10000);
+    if (document.readyState === 'complete') {
+        loadAfterDelay();
     } else {
-        window.addEventListener('load', () => setTimeout(loadAnalytics, 3000), { once: true });
+        window.addEventListener('load', loadAfterDelay, { once: true });
     }
 }
