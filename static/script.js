@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    revealHero();
     initNavigation();
     initTitleAnimations();
     scheduleAnalytics();
@@ -25,28 +24,6 @@ function initDeferredFeatures() {
     initParallax();
     initPointerEffects();
     initStaggerDelays();
-}
-
-function revealHero() {
-    const heroTitle = document.getElementById('heroTitle');
-    if (heroTitle) {
-        heroTitle.querySelectorAll('span').forEach((word, i) => {
-            setTimeout(() => word.classList.add('visible'), 100 + i * 60);
-        });
-    }
-
-    const heroSubtitle = document.getElementById('heroSubtitle');
-    if (heroSubtitle) {
-        heroSubtitle.querySelectorAll('.hero-word-blur').forEach((word, i) => {
-            setTimeout(() => word.classList.add('visible'), 250 + i * 25);
-        });
-    }
-
-    const heroCta = document.querySelector('.hero-cta');
-    if (heroCta) setTimeout(() => heroCta.classList.add('visible'), 700);
-
-    const heroBadge = document.querySelector('.hero-badge');
-    if (heroBadge) setTimeout(() => heroBadge.classList.add('visible'), 850);
 }
 
 function initIntersectionAnimations() {
