@@ -12,6 +12,7 @@
     <link rel="alternate" href="https://nakladki.netlify.app/" hreflang="x-default">
     <link rel="icon" href="https://nakladki.netlify.app/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="https://nakladki.netlify.app/apple-touch-icon.png">
+    <link rel="preload" as="image" href="https://nakladki.netlify.app/images/promo/promo-stair-512-277.avif" imagesrcset="https://nakladki.netlify.app/images/promo/promo-stair-512-277.avif 512w, https://nakladki.netlify.app/images/promo/promo-stair-1024-555.avif 1024w, https://nakladki.netlify.app/images/promo/promo-stair-2888-1565.avif 2888w" imagesizes="100vw" type="image/avif" fetchpriority="high">
     <meta property="og:title" content="Коврики на Сходи під Замовлення">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://nakladki.netlify.app/images/promo-stair-min-480.jpg">
@@ -24,9 +25,8 @@
     <meta name="twitter:image" content="https://nakladki.netlify.app/images/promo-stair-min-480.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Geist:wght@400;500;600;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="lenis.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -85,12 +85,6 @@
     </script>
 </head>
 <body>
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-bg"></div>
-        <div class="preloader-logo">NAKLADKI</div>
-    </div>
-
     <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -202,7 +196,12 @@
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-video-wrapper">
-            <img src="https://nakladki.netlify.app/images/promo/promo-stair-2888-1565.avif" alt="Коврики на сходи під замовлення в Києві" title="Коврики на сходи під замовлення" class="hero-bg-img" itemprop="image">
+            <picture>
+                <source media="(max-width: 767px)" srcset="https://nakladki.netlify.app/images/promo/promo-stair-512-277.avif" type="image/avif">
+                <source media="(max-width: 1199px)" srcset="https://nakladki.netlify.app/images/promo/promo-stair-1024-555.avif" type="image/avif">
+                <source srcset="https://nakladki.netlify.app/images/promo/promo-stair-2888-1565.avif" type="image/avif">
+                <img src="https://nakladki.netlify.app/images/promo/promo-stair-2888-1565.avif" alt="Коврики на сходи під замовлення в Києві" title="Коврики на сходи під замовлення" class="hero-bg-img" width="2888" height="1565" fetchpriority="high" decoding="async" itemprop="image">
+            </picture>
         </div>
         <div class="hero-right">
             <h1 class="hero-title" id="heroTitle">
@@ -339,8 +338,10 @@
                     </div>
                     <div class="work-item-image">
                         <picture>
-                            <source media="(max-width:1199px)" srcset="https://nakladki.netlify.app/images/gallery/london-brown-480-ua.jpg">
-                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-london-korychnevyi-960.avif" alt="Коричневі протиковзкі накладки на сходи Лондон - захист від ковзання для офісу та дому" title="Замовте елегантні протиковзкі килимки на сходи Лондон коричневого кольору з доставкою по Україні" itemprop="image">
+                            <source media="(max-width: 767px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-london-korychnevyi-480.avif" type="image/avif">
+                            <source media="(max-width: 1199px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-london-korychnevyi-640.avif" type="image/avif">
+                            <source srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-london-korychnevyi-960.avif" type="image/avif">
+                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-london-korychnevyi-960.avif" alt="Коричневі протиковзкі накладки на сходи Лондон - захист від ковзання для офісу та дому" title="Замовте елегантні протиковзкі килимки на сходи Лондон коричневого кольору з доставкою по Україні" width="960" height="640" loading="lazy" decoding="async" itemprop="image">
                         </picture>
                     </div>
                 </a>
@@ -360,8 +361,10 @@
                     </div>
                     <div class="work-item-image">
                         <picture>
-                            <source media="(max-width:1199px)" srcset="https://nakladki.netlify.app/images/gallery/palermo-beige-480-ua.jpg">
-                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-palermo-bezhevyi-960.avif" alt="Бежеві килимові накладки на сходи Палермо під замовлення - затишок та комфорт для інтер'єру" title="Купити килимові накладки на сходи Палермо бежевого кольору від виробника" itemprop="image">
+                            <source media="(max-width: 767px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-palermo-bezhevyi-480.avif" type="image/avif">
+                            <source media="(max-width: 1199px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-palermo-bezhevyi-640.avif" type="image/avif">
+                            <source srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-palermo-bezhevyi-960.avif" type="image/avif">
+                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-palermo-bezhevyi-960.avif" alt="Бежеві килимові накладки на сходи Палермо під замовлення - затишок та комфорт для інтер'єру" title="Купити килимові накладки на сходи Палермо бежевого кольору від виробника" width="960" height="640" loading="lazy" decoding="async" itemprop="image">
                         </picture>
                     </div>
                 </a>
@@ -381,8 +384,10 @@
                     </div>
                     <div class="work-item-image">
                         <picture>
-                            <source media="(max-width:1199px)" srcset="https://nakladki.netlify.app/images/gallery/madrid-brown-480-ua-min.jpg">
-                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-madrid-korychnevyi-960.avif" alt="Стильні протиковзкі килимки на сходи Мадрид коричневого кольору - безпека та стиль для вашого дому" title="Замовити онлайн килимові накладки на сходи Мадрид з професійним монтажем у Києві" itemprop="image">
+                            <source media="(max-width: 767px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-madrid-korychnevyi-480.avif" type="image/avif">
+                            <source media="(max-width: 1199px)" srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-madrid-korychnevyi-640.avif" type="image/avif">
+                            <source srcset="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-madrid-korychnevyi-960.avif" type="image/avif">
+                            <img src="https://nakladki.netlify.app/images/gallery/kovryky-na-skhody-madrid-korychnevyi-960.avif" alt="Стильні протиковзкі килимки на сходи Мадрид коричневого кольору - безпека та стиль для вашого дому" title="Замовити онлайн килимові накладки на сходи Мадрид з професійним монтажем у Києві" width="960" height="640" loading="lazy" decoding="async" itemprop="image">
                         </picture>
                     </div>
                 </a>
@@ -441,7 +446,7 @@
                         <div class="testimonial-highlight-divider"></div>
                         <div class="testimonial-highlight-author">
                             <div class="author-image">
-                                <img src="https://nakladki.netlify.app/images/nakladki-logo-w-108-108.png" alt="Коврики на сходи під замовлення">
+                                <img src="https://nakladki.netlify.app/images/nakladki-logo-w-108-108.png" alt="Коврики на сходи під замовлення" width="108" height="108">
                             </div>
                             <div class="author-info">
                                 <strong>NAKLADKI</strong>
@@ -450,7 +455,7 @@
                         </div>
                     </div>
                     <div class="testimonial-highlight-right">
-                        <img src="https://nakladki.netlify.app/images/promo/kovryky-na-hvyntovi-skhody-1340-1603.avif" alt="Комплексні послуги з виготовлення, замірів та монтажу протиковзких ковриків на сходи в Києві" title="Коврики на сходи під замовлення" class="highlight-image">
+                        <img src="https://nakladki.netlify.app/images/promo/kovryky-na-hvyntovi-skhody-1340-1603.avif" alt="Комплексні послуги з виготовлення, замірів та монтажу протиковзких ковриків на сходи в Києві" title="Коврики на сходи під замовлення" class="highlight-image" width="1340" height="1603" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -472,7 +477,7 @@
                         <p itemprop="description">Отримайте консультацію щодо вибору оптимальних килимових накладок, розмірів та дизайну ковриків на ваші сходи.</p>
                         <div class="service-tags"><span>Вибір покриття</span><span>Розміри</span><span>Дизайн</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/support.svg" alt="Іконка: Безкоштовна консультація з вибору килимових накладок"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/support.svg" alt="Іконка: Безкоштовна консультація з вибору килимових накладок" width="512" height="512"></div>
                 </div>
             </div>
             <div class="service-item animate-in delay-1" itemscope itemtype="https://schema.org/Service">
@@ -483,7 +488,7 @@
                         <p itemprop="description">Ми враховуємо всі ваші побажання при індивідуальному замовленні протиковзких ковриків на сходи.</p>
                         <div class="service-tags"><span>Нестандартні сходи</span><span>Лекала</span><span>Сходові майданчики</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/light-bulb.svg" alt="Іконка: Індивідуальний підхід до замовлення протиковзких килимків"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/light-bulb.svg" alt="Іконка: Індивідуальний підхід до замовлення протиковзких килимків" width="512" height="512"></div>
                 </div>
             </div>
             <div class="service-item animate-in delay-2" itemscope itemtype="https://schema.org/Service">
@@ -494,7 +499,7 @@
                         <p itemprop="description">Пропонуємо виїзд фахівця для точних замірів ваших сходів під майбутні килимки в Києві та Київській області.</p>
                         <div class="service-tags"><span>Київ</span><span>Київська область</span><span>Точні заміри</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/ruler.svg" alt="Іконка: Виїзд на заміри перед виготовленням ковриків на сходи"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/ruler.svg" alt="Іконка: Виїзд на заміри перед виготовленням ковриків на сходи" width="512" height="512"></div>
                 </div>
             </div>
             <div class="service-item animate-in delay-3" itemscope itemtype="https://schema.org/Service">
@@ -505,7 +510,7 @@
                         <p itemprop="description">Виготовляємо килимки на сходи нестандартних форм за вашими індивідуальними лекалами.</p>
                         <div class="service-tags"><span>Під замовлення</span><span>За лекалом</span><span>Будь-яка форма</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/cutter.svg" alt="Іконка: Виготовлення килимків для сходів за лекалом"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/cutter.svg" alt="Іконка: Виготовлення килимків для сходів за лекалом" width="512" height="512"></div>
                 </div>
             </div>
             <div class="service-item animate-in delay-4" itemscope itemtype="https://schema.org/Service">
@@ -516,7 +521,7 @@
                         <p itemprop="description">Доставляємо килимки для сходів по всій території України.</p>
                         <div class="service-tags"><span>Нова Пошта</span><span>1-2 дні</span><span>Вся Україна</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/shipped.svg" alt="Іконка: Доставка сходових ковриків по всій Україні"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/shipped.svg" alt="Іконка: Доставка сходових ковриків по всій Україні" width="512" height="512"></div>
                 </div>
             </div>
             <div class="service-item animate-in delay-4" itemscope itemtype="https://schema.org/Service">
@@ -527,7 +532,7 @@
                         <p itemprop="description">Для клієнтів з Києва та передмістя доступна послуга монтажу ковриків на сходи.</p>
                         <div class="service-tags"><span>Монтаж у Києві</span><span>Фіксація</span><span>Безпека</span></div>
                     </div>
-                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/hammer.svg" alt="Іконка: Професійний монтаж килимків на сходинки в Києві"></div>
+                    <div class="service-item-image"><img src="https://nakladki.netlify.app/images/svg/hammer.svg" alt="Іконка: Професійний монтаж килимків на сходинки в Києві" width="512" height="512"></div>
                 </div>
             </div>
         </div>
@@ -661,7 +666,7 @@
 
     <!-- FAQ -->
     <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
-        <div class="faq-bg"><img src="https://nakladki.netlify.app/images/promo-stair.jpg" alt="" loading="lazy"></div>
+        <div class="faq-bg"><img src="https://nakladki.netlify.app/images/promo-stair.jpg" alt="" loading="lazy" width="1920" height="910"></div>
         <div class="faq-content">
             <div class="faq-left">
                 <h2 class="faq-title" id="faqTitle"><span>F</span><span>A</span><span>Q</span></h2>
@@ -698,7 +703,7 @@
 
     <!-- CTA -->
     <section class="about-cta" id="contact">
-        <div class="about-cta-bg"><img src="https://nakladki.netlify.app/images/promo/paralax-fon.avif" alt="Коврики на сходи зі знижкою - акційна пропозиція" class="about-cta-img"></div>
+        <div class="about-cta-bg"><img src="https://nakladki.netlify.app/images/promo/paralax-fon.avif" alt="Коврики на сходи зі знижкою - акційна пропозиція" class="about-cta-img" width="1920" height="1080" loading="lazy" decoding="async"></div>
         <div class="about-cta-container">
             <div class="about-cta-left">
                 <h2 class="about-cta-title" id="worksCtaTitle">
@@ -783,14 +788,6 @@
         </div>
     </div>
 
-    <script src="lenis.js"></script>
     <script src="script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VHE778P7Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-2VHE778P7Z', {'anonymize_ip': true});
-    </script>
 </body>
 </html>
