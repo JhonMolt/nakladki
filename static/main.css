@@ -340,7 +340,7 @@ h3{color:#cacaca}
 .calc-period{font-family:var(--fb);font-size:24px;font-weight:600;color:#8f8f8f}
 .calc-divider{height:1px;width:100%;background:#585858}
 .faq{padding:150px 24px;background-color:var(--bg);position:relative;overflow:hidden}
-.faq-bg{position:absolute;inset:0;z-index:0;transform:rotate(180deg)}
+.faq-bg{position:absolute;inset:0;z-index:0/*;transform:rotate(180deg)*/}
 .faq-bg img{width:100%;height:100%;object-fit:cover;opacity:.08}
 .faq-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:flex;gap:280px;align-items:flex-start}
 .faq-left{flex:0 0 auto;display:flex;flex-direction:column;gap:32px}
