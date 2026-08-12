@@ -313,11 +313,11 @@ function scheduleAnalytics() {
         if (loaded) return;
         loaded = true;
         const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-B0Q8H8GCD9';
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EZHLDM4VS';
         script.async = true;
         script.onload = () => {
             gtag('js', new Date());
-            gtag('config', 'G-B0Q8H8GCD9', { anonymize_ip: true });
+            gtag('config', 'G-5EZHLDM4VS', { anonymize_ip: true });
         };
         document.head.appendChild(script);
     };
