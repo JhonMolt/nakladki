@@ -19,7 +19,7 @@ The optimized HTML/CSS/JS files are stored in `static/`. Hugo copies them to `pu
 Current production URL in metadata, `robots.txt`, and `sitemap.xml`:
 
 ```text
-https://nakladki.netlify.app
+https://nakladki.pp.ua
 ```
 
 If the domain changes later, replace this URL globally in `static/**/*.html`, `static/robots.txt`, `static/sitemap.xml`, and `hugo.yaml`.
@@ -32,4 +32,4 @@ Upload site images to these paths before publishing:
 - `static/images/promo/`
 - `static/images/svg/`
 
-The HTML already references images as `https://nakladki.netlify.app/images/...`.
+The HTML already references images as `https://nakladki.pp.ua/images/...`.
