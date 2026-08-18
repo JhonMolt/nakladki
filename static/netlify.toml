@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://nakladki.netlify.app/*"
+  to = "https://nakladki.pp.ua"
+  status = 301
+  force = true
