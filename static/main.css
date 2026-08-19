@@ -64,7 +64,7 @@ input{font-family:inherit}
 .nav-social-link:hover{color:var(--ac);background:rgba(253,187,32,.1)}
 .nav-social-link img{width:30px;height:30px;border-radius:0}
 .nav-phone-link{width:auto;border-radius:var(--rp);gap:6px;padding:6px 12px;font-family:var(--fb);font-size:18px;font-weight:500;letter-spacing:-.02em}
-@media (max-width:1199px){.nav-phone-link{padding:8px 14px}}
+@media (max-width:1199px){.nav-phone-link{padding:6px}}
 .menu-toggle{display:none;align-items:center;justify-content:center;width:43px;height:43px;padding:1px;border:1px solid var(--bd);border-radius:1000px;background:transparent}
 .menu-icon{display:flex;flex-direction:column;gap:4px;width:26px;height:16px;position:relative}
 .menu-icon-line{width:100%;height:2px;background:var(--t1);transition:var(--tr);position:absolute;left:0}
