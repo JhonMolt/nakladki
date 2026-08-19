@@ -38,7 +38,7 @@ function initIntersectionAnimations() {
 
 function initNavigation() {
     const navbar = document.getElementById('navbar');
-    if (navbar && window.innerWidth > 809) {
+    if (navbar && window.matchMedia('(min-width: 810px)').matches) {
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.pageYOffset > 50);
         }, { passive: true });
@@ -214,7 +214,7 @@ function initFaq() {
 function initServices() {
     document.querySelectorAll('.service-item').forEach((item) => {
         item.addEventListener('click', () => {
-            if (window.innerWidth > 1199) return;
+            if (window.matchMedia('(min-width: 1200px)').matches) return;
             const isActive = item.classList.contains('active');
             document.querySelectorAll('.service-item').forEach((si) => si.classList.remove('active'));
             if (!isActive) item.classList.add('active');
