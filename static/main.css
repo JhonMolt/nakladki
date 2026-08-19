@@ -446,7 +446,7 @@ h3{color:#cacaca}
 .footer-velox-logo{display:flex;align-items:center}
 .footer-velox-logo svg{height:25px;width:auto}
 .footer-spacer{height:300px;position:relative;z-index:0}
-.footer-reveal{background:#fdba20;padding:100px 24px 24px;position:fixed;bottom:0;left:0;right:0;z-index:0;width:auto;box-sizing:border-box;margin:0;overflow:hidden}
+.footer-reveal{background:#fdba20;padding:24px;position:fixed;bottom:0;left:0;right:0;z-index:0;width:auto;box-sizing:border-box;margin:0;overflow:hidden}
 .footer-reveal-inner{max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
 .footer-logo-big{flex:1 0 0px;max-width:640px;height:215px;display:flex;align-items:center;font-family:var(--fd);font-size:200px;font-weight:700;letter-spacing:-.04em;color:#0a0a0a}
 .footer-tagline{flex:1 0 0px;max-width:280px;font-family:Geist,sans-serif;font-size:56px;font-weight:600;line-height:100%;letter-spacing:-.06em;color:#0a0a0a;text-align:right}
@@ -508,7 +508,7 @@ h3{color:#cacaca}
   .testimonial-card p{font-size:18px;padding-left:30px}
   .footer-grid{grid-template-columns:1fr 1fr 1fr}
   .footer-brand{grid-column:1 / -1}
-  .footer-reveal{padding:100px 24px 24px}
+  .footer-reveal{padding:24px}
   .footer-spacer{height:300px}
   .footer-reveal-inner{max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;overflow:hidden}
   .footer-logo-big{flex:1 0 0px;max-width:640px;height:215px;font-size:120px;width:auto}
@@ -626,7 +626,7 @@ h3{color:#cacaca}
   .footer-links-list{gap:8px}
   .footer-newsletter{max-width:100%}
   .footer-additional{flex-direction:column;gap:12px;align-items:flex-start}
-  .footer-reveal{position:relative;z-index:1;padding:100px 16px 24px}
+  .footer-reveal{position:relative;z-index:1;padding:24px 16px}
   .footer-spacer{display:none}
   .footer-reveal-inner{flex-direction:column;gap:10px}
   .footer-logo-big{height:120px;width:100%;font-size:90px}
