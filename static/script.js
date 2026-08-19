@@ -172,30 +172,32 @@ function animateWordsOnView(id, delay) {
 
 function initAboutText() {
     const aboutText = document.getElementById('aboutText');
-    const aboutSection = document.querySelector('.about');
-    if (!aboutText || !aboutSection) return;
+    if (!aboutText) return;
 
     const words = aboutText.querySelectorAll('.about-word');
-    if (window.innerWidth <= 809) {
-        words.forEach((word) => word.classList.add('visible'));
-        return;
-    }
+    if (!words.length) return;
 
-    let ticking = false;
-    const update = () => {
-        const rect = aboutSection.getBoundingClientRect();
-        const scrollProgress = Math.max(0, Math.min(1, -(rect.top - 250) / (rect.height * 1.2)));
+    const revealWords = () => {
         words.forEach((word, i) => {
-            word.classList.toggle('visible', scrollProgress * words.length * 3 - i > 0);
+            word.style.transitionDelay = Math.min(i * 25, 450) + 'ms';
+            word.classList.add('visible');
         });
-        ticking = false;
     };
 
-    window.addEventListener('scroll', () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-    }, { passive: true });
+    if (!('IntersectionObserver' in window)) {
+        revealWords();
+        return;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            revealWords();
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: .2, rootMargin: '0px 0px -10% 0px' });
+
+    observer.observe(aboutText);
 }
 
 function initFaq() {
