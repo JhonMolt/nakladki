@@ -298,7 +298,11 @@
                     <div class="pj-main-image">
                         <div class="zoom-carousel">
                             <div class="zoom-slide active">
-                                <img src="https://nakladki.pp.ua/images/gallery/dune-beige-960-min.jpg" alt="Коврики на сходи Дюна бежевий - м'які на дотик" itemprop="image" width="960" height="540">
+                                <picture>
+                                    <source media="(max-width: 767px)" srcset="https://nakladki.pp.ua/images/gallery/dune-beige-480-min.jpg" type="image/jpg">
+                                    <source srcset="https://nakladki.pp.ua/images/dune-beige-960-min.jpg" type="image/jpg">
+                                    <img src="https://nakladki.pp.ua/images/dune-beige-960-min.jpg" alt="Коврики на сходи Дюна бежевий - м'які на дотик" width="960" height="540" fetchpriority="high" decoding="async" itemprop="image">
+                                </picture>
                             </div>
                             <button class="zoom-arrow prev-arr">&#8249;</button>
                             <button class="zoom-arrow next-arr">&#8250;</button>
