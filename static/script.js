@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initImageLightbox();
     initTitleAnimations();
     scheduleAnalytics();
     runWhenIdle(initDeferredFeatures, 1500);
@@ -208,6 +209,85 @@ function initFaq() {
             document.querySelectorAll('.faq-item').forEach((faqItem) => faqItem.classList.remove('active'));
             if (!isActive) item.classList.add('active');
         });
+    });
+}
+
+function initImageLightbox() {
+    const imageLinkSelector = 'a.works-card[href]';
+    const isImageHref = (href) => /\.(?:jpe?g|png|webp|avif)(?:[?#].*)?$/i.test(href);
+    const hasImageLinks = Array.from(document.querySelectorAll(imageLinkSelector)).some((link) => isImageHref(link.href));
+    if (!hasImageLinks) return;
+
+    let lightbox;
+    let image;
+    let caption;
+    let closeButton;
+    let lastActiveElement;
+
+    const createLightbox = () => {
+        lightbox = document.createElement('div');
+        lightbox.className = 'image-lightbox';
+        lightbox.setAttribute('role', 'dialog');
+        lightbox.setAttribute('aria-modal', 'true');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.setAttribute('aria-label', 'Збільшене фото роботи');
+        lightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="Закрити фото">&times;</button><figure class="image-lightbox-frame"><img class="image-lightbox-img" alt="" decoding="async"><figcaption class="image-lightbox-caption"></figcaption></figure>';
+        document.body.appendChild(lightbox);
+
+        image = lightbox.querySelector('.image-lightbox-img');
+        caption = lightbox.querySelector('.image-lightbox-caption');
+        closeButton = lightbox.querySelector('.image-lightbox-close');
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox || event.target === closeButton) closeLightbox();
+        });
+    };
+
+    const openLightbox = (link) => {
+        if (!lightbox) createLightbox();
+
+        const thumb = link.querySelector('img');
+        const title = link.querySelector('.works-card-title');
+        const subtitle = link.querySelector('.works-card-subtitle');
+        const captionText = [title && title.textContent.trim(), subtitle && subtitle.textContent.trim()].filter(Boolean).join(' - ');
+
+        lastActiveElement = document.activeElement;
+        image.src = link.href;
+        image.alt = thumb ? thumb.alt : link.title || '';
+        caption.textContent = captionText || link.title || '';
+        caption.hidden = !caption.textContent;
+        document.documentElement.classList.add('lightbox-open');
+        document.body.classList.add('lightbox-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        lightbox.classList.add('active');
+        closeButton.focus({ preventScroll: true });
+    };
+
+    const closeLightbox = () => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('lightbox-open');
+        document.body.classList.remove('lightbox-open');
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') lastActiveElement.focus({ preventScroll: true });
+    };
+
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest(imageLinkSelector);
+        if (!link || !isImageHref(link.href) || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        event.preventDefault();
+        openLightbox(link);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            closeButton.focus({ preventScroll: true });
+        }
     });
 }
 
