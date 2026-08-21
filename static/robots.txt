@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nakladki.pp.ua/sitemap.xml
+Sitemap: https://nakladki.pp.ua/sitemap.txt
