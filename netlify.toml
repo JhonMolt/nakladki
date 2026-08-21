@@ -8,6 +8,12 @@
   HUGO_ENABLEGITINFO = "false"
 
 [[redirects]]
+  from = "https://nakladki.netlify.app/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "https://nakladki.netlify.app/*"
   to = "https://nakladki.pp.ua/:splat"
   status = 301
