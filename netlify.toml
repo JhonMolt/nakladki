@@ -13,9 +13,28 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://nakladki.pp.ua/index.html"
+  to = "https://nakladki.pp.ua/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://nakladki.pp.ua//"
+  to = "https://nakladki.pp.ua/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://nakladki.pp.ua/////"
+  to = "https://nakladki.pp.ua/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' https: data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net; form-action 'self'; upgrade-insecure-requests"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
