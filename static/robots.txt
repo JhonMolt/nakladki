@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nakladki.pp.ua/sitemap.xml
-Sitemap: https://nakladki.pp.ua/sitemap-pages.xml
 Sitemap: https://nakladki.netlify.app/sitemap.xml
