@@ -215,14 +215,19 @@ function initFaq() {
 function initImageLightbox() {
     const imageLinkSelector = 'a.works-card[href]';
     const isImageHref = (href) => /\.(?:jpe?g|png|webp|avif)(?:[?#].*)?$/i.test(href);
-    const hasImageLinks = Array.from(document.querySelectorAll(imageLinkSelector)).some((link) => isImageHref(link.href));
-    if (!hasImageLinks) return;
+    const imageLinks = Array.from(document.querySelectorAll(imageLinkSelector)).filter((link) => isImageHref(link.href));
+    if (!imageLinks.length) return;
 
     let lightbox;
     let image;
     let caption;
     let closeButton;
+    let prevButton;
+    let nextButton;
     let lastActiveElement;
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     const createLightbox = () => {
         lightbox = document.createElement('div');
@@ -231,31 +236,58 @@ function initImageLightbox() {
         lightbox.setAttribute('aria-modal', 'true');
         lightbox.setAttribute('aria-hidden', 'true');
         lightbox.setAttribute('aria-label', 'Збільшене фото роботи');
-        lightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="Закрити фото">&times;</button><figure class="image-lightbox-frame"><img class="image-lightbox-img" alt="" decoding="async"><figcaption class="image-lightbox-caption"></figcaption></figure>';
+        lightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="Закрити фото">&times;</button><button class="image-lightbox-nav image-lightbox-prev" type="button" aria-label="Попереднє фото">&#8249;</button><figure class="image-lightbox-frame"><img class="image-lightbox-img" alt="" decoding="async"><figcaption class="image-lightbox-caption"></figcaption></figure><button class="image-lightbox-nav image-lightbox-next" type="button" aria-label="Наступне фото">&#8250;</button>';
         document.body.appendChild(lightbox);
 
         image = lightbox.querySelector('.image-lightbox-img');
         caption = lightbox.querySelector('.image-lightbox-caption');
         closeButton = lightbox.querySelector('.image-lightbox-close');
+        prevButton = lightbox.querySelector('.image-lightbox-prev');
+        nextButton = lightbox.querySelector('.image-lightbox-next');
 
         lightbox.addEventListener('click', (event) => {
             if (event.target === lightbox || event.target === closeButton) closeLightbox();
         });
+        prevButton.addEventListener('click', () => showImage(currentIndex - 1));
+        nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+        lightbox.addEventListener('touchstart', (event) => {
+            if (event.touches.length !== 1) return;
+            touchStartX = event.touches[0].clientX;
+            touchStartY = event.touches[0].clientY;
+        }, { passive: true });
+        lightbox.addEventListener('touchend', (event) => {
+            if (!touchStartX || !event.changedTouches.length) return;
+
+            const touch = event.changedTouches[0];
+            const diffX = touch.clientX - touchStartX;
+            const diffY = touch.clientY - touchStartY;
+            touchStartX = 0;
+            touchStartY = 0;
+
+            if (Math.abs(diffX) < 50 || Math.abs(diffX) < Math.abs(diffY) * 1.4) return;
+            showImage(currentIndex + (diffX < 0 ? 1 : -1));
+        }, { passive: true });
     };
 
-    const openLightbox = (link) => {
-        if (!lightbox) createLightbox();
-
+    const showImage = (index) => {
+        currentIndex = (index + imageLinks.length) % imageLinks.length;
+        const link = imageLinks[currentIndex];
         const thumb = link.querySelector('img');
         const title = link.querySelector('.works-card-title');
         const subtitle = link.querySelector('.works-card-subtitle');
         const captionText = [title && title.textContent.trim(), subtitle && subtitle.textContent.trim()].filter(Boolean).join(' - ');
 
-        lastActiveElement = document.activeElement;
         image.src = link.href;
         image.alt = thumb ? thumb.alt : link.title || '';
         caption.textContent = captionText || link.title || '';
         caption.hidden = !caption.textContent;
+    };
+
+    const openLightbox = (link) => {
+        if (!lightbox) createLightbox();
+
+        lastActiveElement = document.activeElement;
+        showImage(imageLinks.indexOf(link));
         document.documentElement.classList.add('lightbox-open');
         document.body.classList.add('lightbox-open');
         lightbox.setAttribute('aria-hidden', 'false');
@@ -284,6 +316,8 @@ function initImageLightbox() {
     document.addEventListener('keydown', (event) => {
         if (!lightbox || !lightbox.classList.contains('active')) return;
         if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
         if (event.key === 'Tab') {
             event.preventDefault();
             closeButton.focus({ preventScroll: true });
