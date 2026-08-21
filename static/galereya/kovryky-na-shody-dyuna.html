@@ -36,8 +36,8 @@
             {
                 "@type": "Product",
                 "name": "Коврики на сходи Дюна",
-                "brand": "Nakladki",
-                "category": "Коврики на сходи",
+                "brand": {"@type": "Brand", "name": "Nakladki"},
+                "category": {"@type": "CategoryCode", "inCodeSet": "https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt", "codeValue": "499885"},
                 "manufacturer": "Нідерланди",
                 "description": "Коврики Дюна з розрізним ворсом, термоосновою і товщиною 8 мм. Спокійний бежевий колір, м'який хід і тепліше відчуття на сходах.",
                 "image": [
@@ -247,15 +247,15 @@
     </div>
 
     <main>
-        <section class="pj-content" itemscope itemtype="https://schema.org/Product">
+        <section class="pj-content">
             <div class="pj-container">
                 <div class="pj-top">
                     <div class="pj-text">
                         <div class="pj-title">
-                            <h1 id="pjHeroTitle" itemprop="name"><span>Коврики</span> <span>на</span> <span>сходи</span> <span>Дюна</span></h1>
+                            <h1 id="pjHeroTitle"><span>Коврики</span> <span>на</span> <span>сходи</span> <span>Дюна</span></h1>
                         </div>
                         <div class="pj-desc">
-                            <p itemprop="description"><span>Дюна</span> <span>-</span> <span>м'які</span> <span>бежеві</span> <span>коврики</span> <span>на</span> <span>сходи</span> <span>з</span> <span>розрізним</span> <span>ворсом</span> <span>і</span> <span>теплим</span> <span>домашнім</span> <span>виглядом.</span> <span>Колекція</span> <span>не</span> <span>перевантажує</span> <span>інтер'єр,</span> <span>пом'якшує</span> <span>крок</span> <span>та</span> <span>додає</span> <span>комфорту</span> <span>на</span> <span>щоденних</span> <span>маршах</span> <span>між</span> <span>поверхами.</span></p>
+                            <p><span>Дюна</span> <span>-</span> <span>м'які</span> <span>бежеві</span> <span>коврики</span> <span>на</span> <span>сходи</span> <span>з</span> <span>розрізним</span> <span>ворсом</span> <span>і</span> <span>теплим</span> <span>домашнім</span> <span>виглядом.</span> <span>Колекція</span> <span>не</span> <span>перевантажує</span> <span>інтер'єр,</span> <span>пом'якшує</span> <span>крок</span> <span>та</span> <span>додає</span> <span>комфорту</span> <span>на</span> <span>щоденних</span> <span>маршах</span> <span>між</span> <span>поверхами.</span></p>
                         </div>
                     </div>
                     <div class="pj-info">
@@ -282,16 +282,6 @@
                                 </a>
                             </div>
                         </div>
-                        <meta itemprop="brand" content="Nakladki">
-                        <meta itemprop="category" content="Коврики на сходи">
-                        <meta itemprop="manufacturer" content="Нідерланди">
-                        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <meta itemprop="price" content="425">
-                            <meta itemprop="priceCurrency" content="UAH">
-                            <link itemprop="availability" href="https://schema.org/InStock">
-                            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
-                            <link itemprop="url" href="https://nakladki.pp.ua/galereya/kovryky-na-shody-dyuna.html">
-                        </div>
                     </div>
                 </div>
                 <div class="pj-images">
@@ -301,7 +291,7 @@
                                 <picture>
                                     <source media="(max-width: 767px)" srcset="https://nakladki.pp.ua/images/gallery/dune-beige-480-min.jpg" type="image/jpg">
                                     <source srcset="https://nakladki.pp.ua/images/gallery/dune-beige-960-min.jpg" type="image/jpeg">
-                                    <img src="https://nakladki.pp.ua/images/gallery/dune-beige-960-min.jpg" alt="Коврики на сходи Дюна бежевий - м'які на дотик" width="960" height="540" fetchpriority="high" decoding="async" itemprop="image">
+                                    <img src="https://nakladki.pp.ua/images/gallery/dune-beige-960-min.jpg" alt="Коврики на сходи Дюна бежевий - м'які на дотик" width="960" height="540" fetchpriority="high" decoding="async">
                                 </picture>
                             </div>
                             <button class="zoom-arrow prev-arr">&#8249;</button>
